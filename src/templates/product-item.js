@@ -60,7 +60,7 @@ const BlogPost = ({ data }) => {
             <meta name="description" content={`${post.frontmatter.description}`} />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
+        // tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
     </Layout>
