@@ -29,7 +29,6 @@ class BlogRoll extends React.Component {
                     <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
                       {post.frontmatter.title}
                     </Link>
-                    <span> &bull; </span>
                   </p>
                 </header>
                 <p>
@@ -60,10 +59,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "product-item" } } }
-        ) {
+        allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "product-item" } } }) {
           edges {
             node {
               excerpt(pruneLength: 400)
@@ -74,7 +70,6 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {

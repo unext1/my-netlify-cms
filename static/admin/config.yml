@@ -13,7 +13,7 @@ public_folder: /img
 
 collections:
   - name: 'product'
-    label: 'Product'
+    label: 'Products'
     folder: 'src/pages/products'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
