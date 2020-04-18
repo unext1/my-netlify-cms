@@ -12,9 +12,9 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/pages/blog'
+  - name: 'product'
+    label: 'Product'
+    folder: 'src/pages/products'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
