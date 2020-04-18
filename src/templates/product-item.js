@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-export const BlogPostTemplate = ({ content, contentComponent, description, title, helmet }) => {
+export const ProductItemTemplate = ({ content, contentComponent, description, title, helmet }) => {
   const PostContent = contentComponent || Content;
 
   return (
@@ -25,7 +24,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
   );
 };
 
-BlogPostTemplate.propTypes = {
+ProductItemTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -33,12 +32,12 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object
 };
 
-const BlogPost = ({ data }) => {
+const ProductPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <BlogPostTemplate
+      <ProductItemTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -54,13 +53,13 @@ const BlogPost = ({ data }) => {
   );
 };
 
-BlogPost.propTypes = {
+ProductPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
   })
 };
 
-export default BlogPost;
+export default ProductPage;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
