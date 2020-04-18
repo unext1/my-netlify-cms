@@ -13,4 +13,4 @@ CMS.registerMediaLibrary(cloudinary);
 CMS.registerPreviewTemplate('index', IndexPagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('nenaudojamas', ProductPagePreview);
-CMS.registerPreviewTemplate('products', BlogPostPreview);
+CMS.registerPreviewTemplate('blog', BlogPostPreview);
