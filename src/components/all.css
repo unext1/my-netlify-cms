@@ -321,6 +321,7 @@ section {
   }
   .parameters-fixed .gatsby-image-wrapper {
     width: 100% !important;
+    height: 300px !important;
   }
 }
 
@@ -350,4 +351,11 @@ section {
 div .container-padding .container {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+@media (max-width: 440px) {
+  .parameters-fixed .gatsby-image-wrapper {
+    width: 100% !important;
+    height: 200px !important;
+  }
 }

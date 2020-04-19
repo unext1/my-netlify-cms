@@ -12,8 +12,8 @@ product_parameters:
 
       Rounded guides are 35 mm diameter.
   - image: /img/productas.jpeg
-    title: paremeters2
-    description: nice2
+    title: Frame Unit
+    description: Frame wall thickness 22 mm
 ---
 
 Model: KS-838CP
