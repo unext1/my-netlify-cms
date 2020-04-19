@@ -2,11 +2,13 @@ import React from 'react';
 
 import Layout from '../../components/Layout';
 import BlogRoll from '../../components/BlogRoll';
+import Helmet from 'react-helmet';
 
 export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
+        <Helmet titleTemplate="%s | Products"></Helmet>
         <div className="my-header">
           <div className="breadcrumb-area breadcrumb-bg-2">
             <div className="container">

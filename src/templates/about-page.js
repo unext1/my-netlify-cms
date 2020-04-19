@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import Helmet from 'react-helmet';
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
@@ -62,6 +63,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet titleTemplate="%s | About"></Helmet>
       <div className="my-header">
         <div className="breadcrumb-area breadcrumb-bg-2">
           <div className="container">

@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import BlogRoll from '../components/BlogRoll';
+import Helmet from 'react-helmet';
 
 export const IndexPageTemplate = ({ image, title, subheading, mainpitch }) => (
   <>
@@ -25,18 +26,16 @@ export const IndexPageTemplate = ({ image, title, subheading, mainpitch }) => (
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-12">
               <div className="content">
                 <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+                  <div className="column is-12">
+                    <h3 className="title has-text-centered is-size-2">{mainpitch.title}</h3>
+                    <h3 className="subtitle has-text-centered is-size-6">{mainpitch.description}</h3>
                   </div>
                 </div>
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">Our Products</h3>
+                  <h3 className="has-text-centered is-size-2">Our Products</h3>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
@@ -66,6 +65,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet titleTemplate="%s | Home"></Helmet>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
