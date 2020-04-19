@@ -2,34 +2,55 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'product'
-    label: 'Products'
-    folder: 'src/pages/products'
+  - name: "product"
+    label: "Products"
+    folder: "src/pages/products"
     create: true
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'product-item' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Featured Image', name: 'featuredimage', widget: image }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'pages'
-    label: 'Pages'
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "product-item",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: Product Parameters,
+          name: product_parameters,
+          widget: list,
+          fields:
+            [
+              { label: Image, name: image, widget: image },
+              { label: Title, name: title, widget: string },
+              { label: Description, name: description, widget: text },
+            ],
+        }
+  - name: "pages"
+    label: "Pages"
     files:
-      - file: 'src/pages/index.md'
-        label: 'Landing Page'
-        name: 'index'
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
         fields:
-          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'index-page' }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -37,17 +58,22 @@ collections:
           - {
               label: Mainpitch,
               name: mainpitch,
-              widget: list,
+              widget: object,
               fields:
                 [
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
                 ],
             }
-      - file: 'src/pages/about/index.md'
-        label: 'About'
-        name: 'about'
+      - file: "src/pages/about/index.md"
+        label: "About"
+        name: "about"
         fields:
-          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'about-page' }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
