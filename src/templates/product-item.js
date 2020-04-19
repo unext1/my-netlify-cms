@@ -2,30 +2,87 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-export const ProductItemTemplate = ({ content, contentComponent, description, title, helmet, featuredimage }) => {
+export const ProductItemTemplate = ({
+  content,
+  contentComponent,
+  description,
+  title,
+  helmet,
+  featuredimage,
+  product_parameters
+}) => {
   const PostContent = contentComponent || Content;
 
   return (
     <>
       {helmet || ''}
+      <div className="my-header">
+        <div className="breadcrumb-area breadcrumb-bg-2">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <h1 className="breadcrumb-title">Product</h1>
+                <ul className="breadcrumb-list">
+                  <li className="breadcrumb-list__item">
+                    <a href="/products">PRODUCTS</a>
+                  </li>
+                  <li className="breadcrumb-list__item breadcrumb-list__item--active">{title}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container" style={{ marginBottom: 50 }}>
+        <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Information</h1>
+      </div>
+
       <section className="section">
         <div className="container">
           <div className="columns">
             <div className="column is-12">
               <div className="columns is-multiline">
-                <div className="column is-6">
-                  {featuredimage && <img src={featuredimage.childImageSharp.fluid.src} alt={title}></img>}
+                <div className="column is-12">
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: featuredimage,
+                      alt: `featured image thumbnail for post ${title}`
+                    }}
+                  />
                 </div>
-                <div className="column is-6">
+                <div className="column is-12">
                   <h1 className="title is-size-1 has-text-weight-bold is-bold-light">{title}</h1>
                   <p>{description}</p>
                   <br />
                   <PostContent content={content} />
                 </div>
               </div>
+              <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
+                <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Parameters</h1>
+              </div>
+              {product_parameters.map((i, index) => (
+                <div className="column is-12" key={index}>
+                  <div className="columns is-multiline">
+                    <div className="column is-6">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: i.image,
+                          alt: `featured image thumbnail for post ${i.title}`
+                        }}
+                      />
+                    </div>
+                    <div className="column is-6">
+                      <h1>{i.title}</h1>
+                      <h2>{i.description}</h2>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -40,7 +97,14 @@ ProductItemTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  featuredimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  featuredimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  product_parameters: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      description: PropTypes.string,
+      title: PropTypes.string
+    })
+  )
 };
 
 const ProductPage = ({ data }) => {
@@ -60,6 +124,7 @@ const ProductPage = ({ data }) => {
         }
         title={post.frontmatter.title}
         featuredimage={post.frontmatter.featuredimage}
+        product_parameters={post.frontmatter.product_parameters}
       />
     </Layout>
   );
@@ -81,6 +146,17 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        product_parameters {
+          title
+          description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2008, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 640, quality: 100) {

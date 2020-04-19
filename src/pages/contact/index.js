@@ -47,14 +47,32 @@ export default class Index extends React.Component {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta voluptate facere
                       molestiae consequatur.
                     </p>
-                    <div className="social-media">
-                      <a href="https://facebook.com" target="_blank" className="button is-light is-large">
+                    <div className="social-media" style={{ marginTop: 40 }}>
+                      <a
+                        href="https://facebook.com"
+                        target="_blank"
+                        className="button is-light is-large"
+                        style={{ marginRight: 10 }}
+                        rel="noopener noreferrer"
+                      >
                         <i className="fa fa-facebook-square" aria-hidden="true"></i>
                       </a>
-                      <a href="https://instagram.com" target="_blank" className="button is-light is-large">
+                      <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        className="button is-light is-large"
+                        style={{ marginRight: 10 }}
+                        rel="noopener noreferrer"
+                      >
                         <i className="fa fa-instagram" aria-hidden="true"></i>
                       </a>
-                      <a href="https://twitter.com" target="_blank" className="button is-light is-large">
+                      <a
+                        href="https://twitter.com"
+                        target="_blank"
+                        className="button is-light is-large"
+                        style={{ marginRight: 10 }}
+                        rel="noopener noreferrer"
+                      >
                         <i className="fa fa-twitter" aria-hidden="true"></i>
                       </a>
                     </div>
@@ -119,7 +137,7 @@ export default class Index extends React.Component {
                         </div>
                       </div>
                       <div className="field">
-                        <button className="button is-link" type="submit">
+                        <button className="button button-full-width is-link" type="submit">
                           Send
                         </button>
                       </div>
@@ -129,76 +147,6 @@ export default class Index extends React.Component {
               </div>
             </div>
           </section>
-          {/* <section className="section">
-            <div className="container">
-              <div className="content">
-                <form
-                  name="contact"
-                  method="post"
-                  action="/contact/thanks/"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  onSubmit={this.handleSubmit}
-                >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <div hidden>
-                    <label>
-                      Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
-                    </label>
-                  </div>
-                  <div className="field">
-                    <label className="label" htmlFor={'name'}>
-                      Your name
-                    </label>
-                    <div className="control">
-                      <input
-                        className="input"
-                        type={'text'}
-                        name={'name'}
-                        onChange={this.handleChange}
-                        id={'name'}
-                        required={true}
-                      />
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label className="label" htmlFor={'email'}>
-                      Email
-                    </label>
-                    <div className="control">
-                      <input
-                        className="input"
-                        type={'email'}
-                        name={'email'}
-                        onChange={this.handleChange}
-                        id={'email'}
-                        required={true}
-                      />
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label className="label" htmlFor={'message'}>
-                      Message
-                    </label>
-                    <div className="control">
-                      <textarea
-                        className="textarea"
-                        name={'message'}
-                        onChange={this.handleChange}
-                        id={'message'}
-                        required={true}
-                      />
-                    </div>
-                  </div>
-                  <div className="field">
-                    <button className="button is-link" type="submit">
-                      Send
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </section> */}
         </>
       </Layout>
     );

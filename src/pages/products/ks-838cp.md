@@ -7,7 +7,11 @@ product_parameters:
   - image: /img/productas.jpeg
     title: paremeters
     description: nice
+  - image: /img/productas.jpeg
+    title: paremeters2
+    description: nice2
 ---
+
 Model: KS-838CP
 
 Front Loading Beam Saw

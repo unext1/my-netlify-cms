@@ -23,7 +23,8 @@ class BlogRoll extends React.Component {
                             <PreviewCompatibleImage
                               imageInfo={{
                                 image: post.frontmatter.featuredimage,
-                                alt: `featured image thumbnail for post ${post.frontmatter.title}`
+                                alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                                style: { height: '200px' }
                               }}
                             />
                           </div>
@@ -77,7 +78,7 @@ export default () => (
                 templateKey
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 640, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
