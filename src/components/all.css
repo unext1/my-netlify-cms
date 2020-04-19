@@ -314,13 +314,40 @@ section {
   padding-bottom: 50px !important;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 779px) {
   .my-contact-hero {
     padding-top: 20px !important;
     padding-bottom: 0 !important;
+  }
+  .parameters-fixed .gatsby-image-wrapper {
+    width: 100% !important;
   }
 }
 
 .button-full-width {
   width: 100% !important;
+}
+
+.parameters-fixed {
+  width: 30% !important;
+}
+
+@media (max-width: 1199px) {
+  .parameters-fixed {
+    width: 40% !important;
+  }
+}
+
+@media (max-width: 779px) {
+  .parameters-fixed {
+    width: 100% !important;
+  }
+  .parameters-body {
+    text-align: center;
+  }
+}
+
+div .container-padding .container {
+  padding-left: 5px;
+  padding-right: 5px;
 }

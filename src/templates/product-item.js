@@ -66,9 +66,9 @@ export const ProductItemTemplate = ({
                 <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Parameters</h1>
               </div>
               {product_parameters.map((i, index) => (
-                <div className="column is-12" key={index}>
+                <div className="column is-12" key={index} style={{ marginBottom: 30 }}>
                   <div className="columns is-multiline">
-                    <div className="column is-6" style={{ width: '30%' }}>
+                    <div className="column is-6 parameters-fixed">
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: i.image,
@@ -77,8 +77,8 @@ export const ProductItemTemplate = ({
                         }}
                       />
                     </div>
-                    <div className="column is-6">
-                      <h1 className="title is-size-7 has-text-grey-lighter">{i.title}</h1>
+                    <div className="column is-6 parameters-body">
+                      <h1 className="title is-size-6">{i.title}</h1>
                       <p>{i.description}</p>
                     </div>
                   </div>
