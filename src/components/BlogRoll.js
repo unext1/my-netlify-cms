@@ -9,37 +9,42 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div className="columns is-multiline">
+      <div className="columns features">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article className="blog-list-item tile is-child box notification">
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`
-                        }}
-                      />
+            <div className="column is-4" key={post.id}>
+              <Link to={post.fields.slug}>
+                <div className="card is-shady">
+                  <div className="card-image has-text-centered">
+                    {post.frontmatter.featuredimage ? (
+                      <div className="featured-thumbnail">
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: post.frontmatter.featuredimage,
+                            alt: `featured image thumbnail for post ${post.frontmatter.title}`
+                          }}
+                        />
+                      </div>
+                    ) : null}
+                  </div>
+
+                  <div className="card-content">
+                    <div className="content">
+                      <h4> {post.frontmatter.title}</h4>
+                      <p>
+                        Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer
+                        enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat
+                        semper viverra nam.
+                        {post.excerpt}
+                      </p>
+
+                      <p>
+                        <Link to={post.fields.slug}>Learn more</Link>
+                      </p>
                     </div>
-                  ) : null}
-                  <p className="post-meta">
-                    <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </article>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
       </div>
