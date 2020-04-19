@@ -286,3 +286,26 @@ footer#footer-area {
 .has-text-white {
   color: white !important;
 }
+
+section {
+  padding: 0 !important;
+}
+.section {
+  padding: 0 !important;
+}
+
+.my-header {
+  margin-bottom: 50px !important;
+}
+
+@media (max-width: 769px) {
+  .has-text-centered-mobile {
+    text-align: center;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

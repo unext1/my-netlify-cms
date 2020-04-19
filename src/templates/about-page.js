@@ -8,18 +8,46 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">{title}</h2>
-              <PageContent className="content" content={content} />
+    <>
+      <div class="main-content" style={{ padding: 20, marginBottom: 50 }}>
+        <div class="section-light">
+          <div class="container">
+            <div class="column is-12">
+              <h1 class="title has-text-centered " style={{ marginBottom: 25 }}>
+                {title}
+              </h1>
+            </div>
+            <div class="columns is-multiline">
+              <div class="column is-6">
+                <img class=" center" src="https://picsum.photos/id/366/600/375" alt="" />
+              </div>
+              <div class="column is-6 has-vertically-aligned-content" data-aos="fade-right">
+                <p>
+                  <PageContent className="content" content={content} />
+                </p>
+                <br />
+                <div class="column is-12 has-text-centered-mobile">
+                  <div class="columns is-multiline">
+                    <div class="column is-6">
+                      <p class="heading">
+                        <strong>Give us a call !</strong>
+                      </p>
+                      <p class="subheading">123-456-7890</p>
+                    </div>
+                    <div class="column is-6">
+                      <p class="heading">
+                        <strong>Contact us via email !</strong>
+                      </p>
+                      <p class="subheading">hello@example.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
@@ -34,6 +62,24 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
+      <div className="my-header">
+        <div class="breadcrumb-area breadcrumb-bg-2">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <h1 class="breadcrumb-title">About Page</h1>
+                <ul class="breadcrumb-list">
+                  <li class="breadcrumb-list__item">
+                    <a href="/">HOME</a>
+                  </li>
+                  <li class="breadcrumb-list__item breadcrumb-list__item--active">ABOUT</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <AboutPageTemplate contentComponent={HTMLContent} title={post.frontmatter.title} content={post.html} />
     </Layout>
   );
