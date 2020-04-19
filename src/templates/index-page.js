@@ -8,7 +8,7 @@ import BlogRoll from '../components/BlogRoll';
 export const IndexPageTemplate = ({ image, title, subheading, mainpitch }) => (
   <>
     <div
-      className="hero-body"
+      className="hero-body my-hero-body"
       style={{
         backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
         backgroundPosition: `top left`,

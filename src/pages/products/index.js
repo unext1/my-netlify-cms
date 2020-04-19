@@ -8,16 +8,16 @@ export default class BlogIndexPage extends React.Component {
     return (
       <Layout>
         <div className="my-header">
-          <div class="breadcrumb-area breadcrumb-bg-2">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <h1 class="breadcrumb-title">Products</h1>
-                  <ul class="breadcrumb-list">
-                    <li class="breadcrumb-list__item">
+          <div className="breadcrumb-area breadcrumb-bg-2">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <h1 className="breadcrumb-title">Products</h1>
+                  <ul className="breadcrumb-list">
+                    <li className="breadcrumb-list__item">
                       <a href="/">HOME</a>
                     </li>
-                    <li class="breadcrumb-list__item breadcrumb-list__item--active">PRODUCTS</li>
+                    <li className="breadcrumb-list__item breadcrumb-list__item--active">PRODUCTS</li>
                   </ul>
                 </div>
               </div>

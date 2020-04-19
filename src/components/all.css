@@ -271,8 +271,7 @@ footer#footer-area {
   padding-bottom: 50px;
 }
 
-.hero-body {
-  background-image: url(https://picsum.photos/id/381/1920/1080);
+.my-hero-body {
   background: linear-gradient(rgba(31, 44, 108, 0.65), rgba(31, 44, 108, 0.65)),
     rgba(0, 0, 0, 0.55) url('https://picsum.photos/id/381/1920/1080') no-repeat;
   background-attachment: fixed;
@@ -308,4 +307,9 @@ section {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.my-contact-hero {
+  padding-top: 100px !important;
+  padding-bottom: 50px !important;
 }

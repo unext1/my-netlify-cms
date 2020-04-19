@@ -9,36 +9,36 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
   return (
     <>
-      <div class="main-content" style={{ padding: 20, marginBottom: 50 }}>
-        <div class="section-light">
-          <div class="container">
-            <div class="column is-12">
-              <h1 class="title has-text-centered " style={{ marginBottom: 25 }}>
+      <div className="main-content" style={{ padding: 20, marginBottom: 50 }}>
+        <div className="section-light">
+          <div className="container">
+            <div className="column is-12">
+              <h1 className="title has-text-centered " style={{ marginBottom: 25 }}>
                 {title}
               </h1>
             </div>
-            <div class="columns is-multiline">
-              <div class="column is-6">
-                <img class=" center" src="https://picsum.photos/id/366/600/375" alt="" />
+            <div className="columns is-multiline">
+              <div className="column is-6">
+                <img className=" center" src="https://picsum.photos/id/366/600/375" alt="" />
               </div>
-              <div class="column is-6 has-vertically-aligned-content" data-aos="fade-right">
+              <div className="column is-6 has-vertically-aligned-content" data-aos="fade-right">
                 <p>
                   <PageContent className="content" content={content} />
                 </p>
                 <br />
-                <div class="column is-12 has-text-centered-mobile">
-                  <div class="columns is-multiline">
-                    <div class="column is-6">
-                      <p class="heading">
+                <div className="column is-12 has-text-centered-mobile">
+                  <div className="columns is-multiline">
+                    <div className="column is-6">
+                      <p className="heading">
                         <strong>Give us a call !</strong>
                       </p>
-                      <p class="subheading">123-456-7890</p>
+                      <p className="subheading">123-456-7890</p>
                     </div>
-                    <div class="column is-6">
-                      <p class="heading">
+                    <div className="column is-6">
+                      <p className="heading">
                         <strong>Contact us via email !</strong>
                       </p>
-                      <p class="subheading">hello@example.com</p>
+                      <p className="subheading">hello@example.com</p>
                     </div>
                   </div>
                 </div>
@@ -63,16 +63,16 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
       <div className="my-header">
-        <div class="breadcrumb-area breadcrumb-bg-2">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <h1 class="breadcrumb-title">About Page</h1>
-                <ul class="breadcrumb-list">
-                  <li class="breadcrumb-list__item">
+        <div className="breadcrumb-area breadcrumb-bg-2">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <h1 className="breadcrumb-title">About Page</h1>
+                <ul className="breadcrumb-list">
+                  <li className="breadcrumb-list__item">
                     <a href="/">HOME</a>
                   </li>
-                  <li class="breadcrumb-list__item breadcrumb-list__item--active">ABOUT</li>
+                  <li className="breadcrumb-list__item breadcrumb-list__item--active">ABOUT</li>
                 </ul>
               </div>
             </div>
