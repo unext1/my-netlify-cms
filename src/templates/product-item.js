@@ -68,17 +68,18 @@ export const ProductItemTemplate = ({
               {product_parameters.map((i, index) => (
                 <div className="column is-12" key={index}>
                   <div className="columns is-multiline">
-                    <div className="column is-6">
+                    <div className="column is-6" style={{ width: '30%' }}>
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: i.image,
-                          alt: `featured image thumbnail for post ${i.title}`
+                          alt: `featured image thumbnail for post ${i.title}`,
+                          style: { height: 300, width: 300 }
                         }}
                       />
                     </div>
                     <div className="column is-6">
-                      <h1>{i.title}</h1>
-                      <h2>{i.description}</h2>
+                      <h1 className="title is-size-7 has-text-grey-lighter">{i.title}</h1>
+                      <p>{i.description}</p>
                     </div>
                   </div>
                 </div>
