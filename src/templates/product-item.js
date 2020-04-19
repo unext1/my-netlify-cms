@@ -17,7 +17,7 @@ export const ProductItemTemplate = ({ content, contentComponent, description, ti
             <div className="column is-12">
               <div className="columns is-multiline">
                 <div className="column is-6">
-                  <img src={featuredimage.childImageSharp.fluid.src} alt={title}></img>
+                  {featuredimage && <img src={featuredimage.childImageSharp.fluid.src} alt={title}></img>}
                 </div>
                 <div className="column is-6">
                   <h1 className="title is-size-1 has-text-weight-bold is-bold-light">{title}</h1>

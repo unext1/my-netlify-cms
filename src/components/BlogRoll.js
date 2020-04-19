@@ -30,14 +30,9 @@ class BlogRoll extends React.Component {
 
                   <div className="card-content">
                     <div className="content">
-                      <h4> {post.frontmatter.title}</h4>
-                      <p>
-                        Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer
-                        enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat
-                        semper viverra nam.
-                        {post.excerpt}
-                      </p>
-
+                      <h2> {post.frontmatter.title}</h2>
+                      <div className="subtitle is-size-5"> {post.frontmatter.description}</div>
+                      <p>{post.excerpt}</p>
                       <p>
                         <Link to={post.fields.slug}>Learn more</Link>
                       </p>
@@ -74,6 +69,7 @@ export default () => (
               }
               frontmatter {
                 title
+                description
                 templateKey
                 featuredimage {
                   childImageSharp {
