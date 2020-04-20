@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Company's name
-image: /img/home-jumbotron.jpg
+image: /img/bgimg.jpg
 heading: Company's name
 subheading: Subheading if needed
 mainpitch:
