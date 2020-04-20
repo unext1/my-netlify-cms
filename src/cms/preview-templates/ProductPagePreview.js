@@ -8,7 +8,8 @@ const ProductPagePreview = ({ entry, widgetFor, getAsset }) => {
       content={widgetFor('body')}
       description={entry.getIn(['data', 'description'])}
       title={entry.getIn(['data', 'title'])}
-      image={getAsset(entry.getIn(['data', 'image']))}
+      featuredimage={getAsset(entry.getIn(['data', 'image']))}
+      product_parameters={entry.getIn(['data', 'product_parameters'])}
     />
   );
 };
