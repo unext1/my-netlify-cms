@@ -291,9 +291,6 @@ footer#footer-area {
   color: white !important;
 }
 
-section {
-  padding: 0 !important;
-}
 .section {
   padding: 0 !important;
 }
@@ -353,10 +350,10 @@ section {
   }
 }
 
-/* div .container-padding .container {
+div .container-padding .container {
   padding-left: 5px;
   padding-right: 5px;
-} */
+}
 
 @media (max-width: 440px) {
   .parameters-fixed .gatsby-image-wrapper {
