@@ -47,12 +47,14 @@ export const ProductItemTemplate = ({
           <div className="column is-12">
             <div className="columns is-multiline">
               <div className="column is-12">
-                <PreviewCompatibleImage
-                  imageInfo={{
-                    image: featuredimage,
-                    alt: `featured image thumbnail for post ${title}`
-                  }}
-                />
+                {featuredimage ? (
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: featuredimage,
+                      alt: `featured image thumbnail for post ${title}`
+                    }}
+                  />
+                ) : null}
               </div>
               <div className="column is-12">
                 <h1 className="title is-size-1 has-text-weight-bold is-bold-light">{title}</h1>
