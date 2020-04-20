@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import { ProductItemTemplate } from '../../templates/product-item';
 
 const ProductPagePreview = ({ entry, widgetFor, getAsset }) => {
+  const data = entry.getIn(['data']).toJS();
+
   return (
     <ProductItemTemplate
       content={widgetFor('body')}
-      description={entry.getIn(['data', 'description'])}
-      title={entry.getIn(['data', 'title'])}
-      featuredimage={getAsset(entry.getIn(['data', 'image']))}
-      product_parameters={entry.getIn(['data', 'product_parameters'])}
+      description={data.description}
+      title={data.title}
+      featuredimage={getAsset(data.featuredimage).url}
+      product_parameters={data.product_parameters}
     />
   );
 };
