@@ -36,9 +36,7 @@ class BlogRoll extends React.Component {
                           <h2> {post.frontmatter.title}</h2>
                           <div className="subtitle is-size-5"> {post.frontmatter.description}</div>
                           <p>{post.excerpt}</p>
-                          <p>
-                            <Link to={post.fields.slug}>Learn more</Link>
-                          </p>
+                          <p>Learn more</p>
                         </div>
                       </div>
                     </div>

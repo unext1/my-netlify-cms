@@ -69,13 +69,15 @@ export const ProductItemTemplate = ({
                 <div className="column is-12" key={index} style={{ marginBottom: 30 }}>
                   <div className="columns is-multiline">
                     <div className="column is-6 parameters-fixed">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: i.image,
-                          alt: `featured image thumbnail for post ${i.title}`,
-                          style: { height: 300, width: 300 }
-                        }}
-                      />
+                      {i.image ? (
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: i.image,
+                            alt: `featured image thumbnail for post ${i.title}`,
+                            style: { height: 300, width: 300 }
+                          }}
+                        />
+                      ) : null}
                     </div>
                     <div className="column is-6 parameters-body">
                       <h1 className="title is-size-6">{i.title}</h1>

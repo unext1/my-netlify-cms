@@ -23,9 +23,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                 <img className=" center" src="https://picsum.photos/id/366/600/375" alt="" />
               </div>
               <div className="column is-6 has-vertically-aligned-content" data-aos="fade-right">
-                <p>
-                  <PageContent className="content" content={content} />
-                </p>
+                <PageContent className="content" content={content} />
                 <br />
                 <div className="column is-12 has-text-centered-mobile">
                   <div className="columns is-multiline">
