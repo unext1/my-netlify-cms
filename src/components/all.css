@@ -295,6 +295,10 @@ section {
   padding: 0 !important;
 }
 
+.section {
+  padding: 0.5 !important;
+}
+
 .my-header {
   margin-bottom: 50px !important;
 }
