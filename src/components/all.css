@@ -277,8 +277,6 @@ footer#footer-area {
 }
 
 .my-hero-body {
-  background: linear-gradient(rgba(31, 44, 108, 0.65), rgba(31, 44, 108, 0.65)),
-    rgba(0, 0, 0, 0.55) url('https://picsum.photos/id/381/1920/1080') no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color: white;
@@ -380,4 +378,12 @@ div .container-padding .container {
   padding: 12px;
   border-radius: 50%;
   font-size: 18px;
+}
+.columns.is-variable.is-8 {
+  --columnGap: 0 !important;
+}
+
+.columns {
+  margin-left: -0.25px !important;
+  margin-right: -0.25px !important;
 }

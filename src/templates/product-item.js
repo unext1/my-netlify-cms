@@ -44,49 +44,47 @@ export const ProductItemTemplate = ({
 
       <section className="section">
         <div className="container">
-          <div className="columns">
-            <div className="column is-12">
-              <div className="columns is-multiline">
-                <div className="column is-12">
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: featuredimage,
-                      alt: `featured image thumbnail for post ${title}`
-                    }}
-                  />
-                </div>
-                <div className="column is-12">
-                  <h1 className="title is-size-1 has-text-weight-bold is-bold-light">{title}</h1>
-                  <p>{description}</p>
-                  <br />
-                  <PostContent content={content} />
-                </div>
+          <div className="column is-12">
+            <div className="columns is-multiline">
+              <div className="column is-12">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: featuredimage,
+                    alt: `featured image thumbnail for post ${title}`
+                  }}
+                />
               </div>
-              <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
-                <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Parameters</h1>
+              <div className="column is-12">
+                <h1 className="title is-size-1 has-text-weight-bold is-bold-light">{title}</h1>
+                <p>{description}</p>
+                <br />
+                <PostContent content={content} />
               </div>
-              {product_parameters.map((i, index) => (
-                <div className="column is-12" key={index} style={{ marginBottom: 30 }}>
-                  <div className="columns is-multiline">
-                    <div className="column is-6 parameters-fixed">
-                      {i.image ? (
-                        <PreviewCompatibleImage
-                          imageInfo={{
-                            image: i.image,
-                            alt: `featured image thumbnail for post ${i.title}`,
-                            style: { height: 300, width: 300 }
-                          }}
-                        />
-                      ) : null}
-                    </div>
-                    <div className="column is-6 parameters-body">
-                      <h1 className="title is-size-6">{i.title}</h1>
-                      <p>{i.description}</p>
-                    </div>
+            </div>
+            <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
+              <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Parameters</h1>
+            </div>
+            {product_parameters.map((i, index) => (
+              <div className="column is-12" key={index} style={{ marginBottom: 30 }}>
+                <div className="columns is-multiline">
+                  <div className="column is-6 parameters-fixed">
+                    {i.image ? (
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: i.image,
+                          alt: `featured image thumbnail for post ${i.title}`,
+                          style: { height: 300, width: 300 }
+                        }}
+                      />
+                    ) : null}
+                  </div>
+                  <div className="column is-6 parameters-body">
+                    <h1 className="title is-size-6">{i.title}</h1>
+                    <p>{i.description}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -154,7 +152,7 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 2064, quality: 100) {
+              fluid(maxWidth: 2008, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
