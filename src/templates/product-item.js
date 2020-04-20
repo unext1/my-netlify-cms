@@ -66,27 +66,28 @@ export const ProductItemTemplate = ({
             <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
               <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Parameters</h1>
             </div>
-            {product_parameters.map((i, index) => (
-              <div className="column is-12" key={index} style={{ marginBottom: 30 }}>
-                <div className="columns is-multiline">
-                  <div className="column is-6 parameters-fixed">
-                    {i.image ? (
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: i.image,
-                          alt: `featured image thumbnail for post ${i.title}`,
-                          style: { height: 300, width: 300 }
-                        }}
-                      />
-                    ) : null}
-                  </div>
-                  <div className="column is-6 parameters-body">
-                    <h1 className="title is-size-6">{i.title}</h1>
-                    <p>{i.description}</p>
+            {product_parameters &&
+              product_parameters.map((i, index) => (
+                <div className="column is-12" key={index} style={{ marginBottom: 30 }}>
+                  <div className="columns is-multiline">
+                    <div className="column is-6 parameters-fixed">
+                      {i.image ? (
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: i.image,
+                            alt: `featured image thumbnail for post ${i.title}`,
+                            style: { height: 300, width: 300 }
+                          }}
+                        />
+                      ) : null}
+                    </div>
+                    <div className="column is-6 parameters-body">
+                      <h1 className="title is-size-6">{i.title}</h1>
+                      <p>{i.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </section>
