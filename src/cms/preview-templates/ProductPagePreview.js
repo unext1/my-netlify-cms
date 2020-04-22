@@ -10,7 +10,7 @@ const ProductPagePreview = ({ entry, widgetFor, getAsset }) => {
       content={widgetFor('body')}
       description={data.description}
       title={data.title}
-      featuredimage={getAsset(data.featuredimage).url}
+      image={getAsset(data.image).url}
       product_parameters={data.product_parameters}
     />
   );

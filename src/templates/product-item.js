@@ -12,7 +12,7 @@ export const ProductItemTemplate = ({
   description,
   title,
   helmet,
-  featuredimage,
+  image,
   product_parameters
 }) => {
   const PostContent = contentComponent || Content;
@@ -47,10 +47,10 @@ export const ProductItemTemplate = ({
           <div className="column is-12">
             <div className="columns is-multiline">
               <div className="column is-12">
-                {featuredimage ? (
+                {image ? (
                   <PreviewCompatibleImage
                     imageInfo={{
-                      image: featuredimage,
+                      image: image,
                       alt: `featured image thumbnail for post ${title}`
                     }}
                   />
@@ -101,7 +101,7 @@ ProductItemTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  featuredimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   product_parameters: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -127,7 +127,7 @@ const ProductPage = ({ data }) => {
           </Helmet>
         }
         title={post.frontmatter.title}
-        featuredimage={post.frontmatter.featuredimage}
+        image={post.frontmatter.image}
         product_parameters={post.frontmatter.product_parameters}
       />
     </Layout>
@@ -161,7 +161,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        featuredimage {
+        image {
           childImageSharp {
             fluid(maxWidth: 640, quality: 100) {
               ...GatsbyImageSharpFluid

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import BlogRoll from '../components/BlogRoll';
 import Helmet from 'react-helmet';
+import ProductCard from '../components/productCart';
 
-export const IndexPageTemplate = ({ image, title, subheading, mainpitch }) => (
+export const IndexPageTemplate = ({ image, title, subheading, mainpitch, products }) => (
   <>
     <div
       className="hero-body my-hero-body"
@@ -36,7 +36,7 @@ export const IndexPageTemplate = ({ image, title, subheading, mainpitch }) => (
                 </div>
                 <div className="column is-12">
                   <h3 className="has-text-centered is-size-2">Our Products</h3>
-                  <BlogRoll />
+                  {products && products.map(({ node: post }) => <ProductCard key={post.id} post={post} />)}
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
                       See all products
@@ -61,7 +61,7 @@ IndexPageTemplate.propTypes = {
 };
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter } = data.index_page;
 
   return (
     <Layout>
@@ -72,6 +72,7 @@ const IndexPage = ({ data }) => {
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
+        products={data.products.edges}
       />
     </Layout>
   );
@@ -89,7 +90,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+    index_page: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
         heading
@@ -104,6 +105,29 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+        }
+      }
+    }
+    products: allMarkdownRemark(limit: 3, filter: { frontmatter: { templateKey: { eq: "product-item" } } }) {
+      edges {
+        node {
+          excerpt(pruneLength: 400)
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            description
+            templateKey
+            image {
+              childImageSharp {
+                fluid(maxWidth: 640, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }

@@ -2,7 +2,7 @@
 templateKey: product-item
 title: KS-838CP
 description: COMPUTERIZED BEAM SAW
-featuredimage: /img/productas.jpeg
+image: /img/productas.jpeg
 product_parameters:
   - image: /img/parameters.jpg
     title: Main Frame

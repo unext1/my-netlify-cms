@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import { graphql, StaticQuery } from 'gatsby';
+import ProductCard from './productCart';
 
 class BlogRoll extends React.Component {
   render() {
@@ -12,37 +12,7 @@ class BlogRoll extends React.Component {
       <>
         <div className="container">
           <div className="columns">
-            {posts &&
-              posts.map(({ node: post }) => (
-                <div className="column is-4" key={post.id}>
-                  <Link to={post.fields.slug}>
-                    <div className="card is-shady">
-                      <div className="card-image has-text-centered">
-                        {post.frontmatter.featuredimage ? (
-                          <div className="featured-thumbnail">
-                            <PreviewCompatibleImage
-                              imageInfo={{
-                                image: post.frontmatter.featuredimage,
-                                alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                                style: { height: '200px' }
-                              }}
-                            />
-                          </div>
-                        ) : null}
-                      </div>
-
-                      <div className="card-content">
-                        <div className="content">
-                          <h2> {post.frontmatter.title}</h2>
-                          <div className="subtitle is-size-5"> {post.frontmatter.description}</div>
-                          <p>{post.excerpt}</p>
-                          <p>Learn more</p>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+            {posts && posts.map(({ node: post }) => <ProductCard key={post.id} post={post} />)}
           </div>
         </div>
       </>
@@ -74,7 +44,7 @@ export default () => (
                 title
                 description
                 templateKey
-                featuredimage {
+                image {
                   childImageSharp {
                     fluid(maxWidth: 640, quality: 100) {
                       ...GatsbyImageSharpFluid
