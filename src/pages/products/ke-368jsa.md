@@ -8,7 +8,7 @@ description: 'Model: KE-368JSA
 
   Piece clearence: 65 mm'
 image: /img/ke-368jsa.jpg
-parameters:
+parameters_product:
   - description: Pre-milling Unit. 2 motors  2.2 kW, 12.000 rpm with jumping function. Up / down adjustment. Extra cabin only for  pre-milling unit
     image: /img/ke-368jsa_param_1.jpg
     title: Pre-milling Unit

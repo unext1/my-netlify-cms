@@ -13,7 +13,8 @@ export const ProductItemTemplate = ({
   title,
   helmet,
   image,
-  product_parameters
+  parameters,
+  subtitle
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -58,16 +59,19 @@ export const ProductItemTemplate = ({
               </div>
               <div className="column is-12">
                 <h1 className="title is-size-1 has-text-weight-bold is-bold-light">{title}</h1>
+                <p className="subtitle">{subtitle}⠀</p>
                 <p>{description}</p>
                 <br />
                 <PostContent content={content} />
               </div>
             </div>
             <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
-              <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Parameters</h1>
+              {parameters ? (
+                <h1 className="title is-size-3 has-text-weight-bold has-text-centered"> Parameters</h1>
+              ) : null}
             </div>
-            {product_parameters &&
-              product_parameters.map((i, index) => (
+            {parameters &&
+              parameters.map((i, index) => (
                 <div className="column is-12" key={index} style={{ marginBottom: 30 }}>
                   <div className="columns is-multiline">
                     <div className="column is-6 parameters-fixed">
@@ -100,9 +104,10 @@ ProductItemTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  subtitle: PropTypes.string,
   helmet: PropTypes.object,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  product_parameters: PropTypes.arrayOf(
+  parameters: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       description: PropTypes.string,
@@ -128,7 +133,8 @@ const ProductPage = ({ data }) => {
         }
         title={post.frontmatter.title}
         image={post.frontmatter.image}
-        product_parameters={post.frontmatter.product_parameters}
+        subtitle={post.frontmatter.subtitle}
+        parameters={post.frontmatter.parameters_product}
       />
     </Layout>
   );
@@ -150,7 +156,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        product_parameters {
+        subtitle
+        parameters_product {
           title
           description
           image {

@@ -8,7 +8,7 @@ description: 'Model: KS-838CP
 
   Saw Projection height: 120 mm'
 image: /img/ks-838cp.jpg
-parameters:
+parameters_product:
   - description: 'Main Frame, There is an additional middle leg and all the frame parts are connected like rectangle., Saw carriage is supported by two frame as equal. Rounded guides are 35 mm diameter.'
     image: /img/ks-838cp_param_1.jpg'
     title: Main Frame

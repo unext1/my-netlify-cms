@@ -10,7 +10,7 @@ description: 'Model: KE-486JHKP
 
   Piece clearence: 30- 45 mm'
 image: /img/ke-486jhkp.jpg
-parameters:
+parameters_product:
   - description: ''
     image: /img/ke-486jhkp_param_1.jpg
     title: null

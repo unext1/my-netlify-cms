@@ -4,7 +4,7 @@ import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 const ProductCard = ({ post }) => (
   <div className="column is-4" key={post.id}>
-    <Link to={post.fields.slug}>
+    <Link className="full-width-card" to={post.fields.slug}>
       <div className="card is-shady">
         <div className="card-image has-text-centered">
           {post.frontmatter.image ? (
@@ -22,9 +22,9 @@ const ProductCard = ({ post }) => (
 
         <div className="card-content">
           <div className="content">
-            <h2> {post.frontmatter.title}</h2>
-            <div className="subtitle is-size-5"> {post.frontmatter.description}</div>
-            <p>{post.excerpt}</p>
+            <h2 className="title "> {post.frontmatter.title}</h2>
+            <div className="subtitle is-size-5">{post.frontmatter.subtitle}</div>
+            <p className="my-desc">{post.frontmatter.description}</p>
             <p>Learn more</p>
           </div>
         </div>

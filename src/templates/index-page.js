@@ -36,7 +36,9 @@ export const IndexPageTemplate = ({ image, title, subheading, mainpitch, product
                 </div>
                 <div className="column is-12">
                   <h3 className="has-text-centered is-size-2">Our Products</h3>
-                  {products && products.map(({ node: post }) => <ProductCard key={post.id} post={post} />)}
+                  <div className="columns is-multiline">
+                    {products && products.map(({ node: post }) => <ProductCard key={post.id} post={post} />)}
+                  </div>
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
                       See all products

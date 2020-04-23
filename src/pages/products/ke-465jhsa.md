@@ -8,7 +8,7 @@ description: 'Model: KE-465JHSA
 
   Piece clearence: 65 mm'
 image: /img/ke-465jhsa.jpg
-parameters:
+parameters_product:
   - description: 'Made of thick ribbed steel on which a  plate is welded to guarantee maximum rigidity and eliminate vibrations. The main frame is complete, like monoblock and processed as CNC machines with very low tolerance. So it makes guarranty the low tolerance.'
 
     image: /img/ke-465jhsa_param_1.jpg

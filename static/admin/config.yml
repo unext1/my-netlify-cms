@@ -24,12 +24,12 @@ collections:
           default: "product-item",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "markdown" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured Image", name: "image", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
       - {
           label: Product Parameters,
-          name: product_parameters,
+          name: parameters,
           widget: list,
           fields:
             [

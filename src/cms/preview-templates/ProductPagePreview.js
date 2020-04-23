@@ -7,11 +7,11 @@ const ProductPagePreview = ({ entry, widgetFor, getAsset }) => {
 
   return (
     <ProductItemTemplate
-      content={widgetFor('body')}
       description={data.description}
       title={data.title}
+      subtitle={data.subtitle}
       image={getAsset(data.image).url}
-      product_parameters={data.product_parameters}
+      parameters={data.parameters}
     />
   );
 };

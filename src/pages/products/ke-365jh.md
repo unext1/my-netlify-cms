@@ -8,7 +8,7 @@ description: 'Model: KE-365JH
 
   Piece clearence: 65 mm'
 image: /img/ke-365jh.jpg
-parameters:
+parameters_product:
   - description: Made of thick ribbed steel on which a plate is welded to guarantee
       maximum rigidity and eliminate vibrations. The main frame is complete, like
       a monoblock and processed like CNC machines with very low tolerance. So it makes
@@ -22,14 +22,14 @@ parameters:
   - description: Front Spray Unit
     image: /img/ke-365jh_param_3.jpg
     title: Front Spray Unit
-  - description: Pre-milling Unit 2 motors  2.2 kW, 12.000 rpm with jumping function',
+  - description: Pre-milling Unit 2 motors  2.2 kW, 12.000 rpm with jumping function,
       Up / down adjustment, Extra cabin for only pre-milling unit
     image: /img/ke-365jh_param_4.jpg
     title: Pre-milling Unit
   - description: Glueing Unit, Glueing unit transmission is done by a seperate motor
       and is controlled by the driver. There is an extra lapel and every panel that
       comes in this lapel, openes the glue. When there is no panel this lapel closes
-      the glue.'
+      the glue.
     image: /img/ke-365jh_param_5.jpg
     title: Glueing Unit
   - description: 'Two independent motors are moved on prismatic guides., No need for

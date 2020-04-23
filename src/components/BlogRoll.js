@@ -11,7 +11,7 @@ class BlogRoll extends React.Component {
     return (
       <>
         <div className="container">
-          <div className="columns">
+          <div className="columns is-multiline">
             {posts && posts.map(({ node: post }) => <ProductCard key={post.id} post={post} />)}
           </div>
         </div>
@@ -43,6 +43,7 @@ export default () => (
               frontmatter {
                 title
                 description
+                subtitle
                 templateKey
                 image {
                   childImageSharp {

@@ -10,7 +10,7 @@ description: 'Model: KE-565SJHA
 
   Piece clearence: 30- 45 mm'
 image: /img/ke-565sjha.jpg
-parameters:
+parameters_product:
   - description: ''
     image: /img/ke-565sjha_param_1.jpg
     title: ''

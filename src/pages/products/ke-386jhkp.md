@@ -10,7 +10,7 @@ description: 'Model: KE-386JHKP
 
   Piece clearence: 30- 45 mm'
 image: /img/ke-386jhkp.jpg
-parameters:
+parameters_product:
   - description: ''
     image: /img/ke-386jhkp_param_1.jpg
     title: Main Frame
