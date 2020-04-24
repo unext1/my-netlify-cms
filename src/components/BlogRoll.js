@@ -47,7 +47,7 @@ export default () => (
                 templateKey
                 image {
                   childImageSharp {
-                    fluid(maxWidth: 640, quality: 100) {
+                    fluid(maxWidth: 640, quality: 50) {
                       ...GatsbyImageSharpFluid
                     }
                   }

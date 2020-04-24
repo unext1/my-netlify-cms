@@ -67,7 +67,7 @@ const AboutPage = ({ data }) => {
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
-                <h1 className="breadcrumb-title">About Page</h1>
+                <h1 className="breadcrumb-title">About</h1>
                 <ul className="breadcrumb-list">
                   <li className="breadcrumb-list__item">
                     <a href="/">HOME</a>

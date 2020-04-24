@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import './all.sass';
 import './main.css';
+import './stars.css';
 import './all.css';
 import useSiteMetadata from './SiteMetadata';
 

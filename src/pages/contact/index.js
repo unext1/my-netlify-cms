@@ -39,6 +39,23 @@ export default class Index extends React.Component {
       <Layout>
         <Helmet titleTemplate="%s | Contact"></Helmet>
         <>
+          <div className="my-header">
+            <div className="breadcrumb-area breadcrumb-bg-2">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <h1 className="breadcrumb-title">Contact</h1>
+                    <ul className="breadcrumb-list">
+                      <li className="breadcrumb-list__item">
+                        <a href="/">HOME</a>
+                      </li>
+                      <li className="breadcrumb-list__item breadcrumb-list__item--active">CONTACT US</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <section className="hero my-contact-hero">
             <div className="hero-body">
               <div className="container">

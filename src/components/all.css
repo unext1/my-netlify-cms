@@ -279,13 +279,20 @@ footer#footer-area {
 }
 
 .my-hero-body {
-  background: linear-gradient(rgba(31, 44, 108, 0.65), rgba(10, 26, 102, 0.65)), rgba(0, 0, 0, 0.55);
   background-attachment: fixed;
   background-size: cover;
   color: white;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding-top: 20rem;
   padding-bottom: 20rem;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+@media (max-height: 778px) {
+  .my-hero-body {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
 }
 
 .has-text-white {
@@ -388,4 +395,18 @@ div .container-padding .container {
 
 .full-width-card {
   width: 100%;
+}
+
+.my-hero-text {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 500px;
+}
+
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover {
+  color: darkgray;
 }

@@ -9,14 +9,17 @@ import ProductCard from '../components/productCart';
 export const IndexPageTemplate = ({ image, title, subheading, mainpitch, products }) => (
   <>
     <div
-      className="hero-body my-hero-body"
+      className="hero-body my-hero-body "
       style={{
-        backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
+        // backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`
       }}
     >
-      <div className="container has-text-centered">
+      <div id="stars" />
+      <div id="stars2" />
+      <div id="stars3" />
+      <div className="container has-text-centered my-hero-text">
         <h1 className="title has-text-white">{title}</h1>
         <h3 className="subtitle has-text-white">{subheading}</h3>
       </div>
